@@ -1,0 +1,11 @@
+version: '2'
+services:
+    kkf-postgresql:
+        image: postgres:9.6.5
+        # volumes:
+        #     - ~/volumes/jhipster/KKF/postgresql/:/var/lib/postgresql/data/
+        environment:
+            - POSTGRES_USER=KKF
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432
