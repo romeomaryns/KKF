@@ -1,0 +1,63 @@
+entity Persoon {
+	voornaam String required,
+    familienaam String required,
+    geboortedatum LocalDate
+  }
+
+entity Contact {
+	omschrijving String required
+}
+
+entity ContactType {
+	omschrijving String required
+}
+
+entity AdresType {
+	omschrijving String required
+}
+
+entity Adres {
+	straatnaam String required,
+    huisnummer String,
+	postcode String,
+	stad String
+}
+
+entity Geslacht {
+	omschrijving String required
+}
+
+entity Relatie {
+    omschrijving String required
+}
+
+entity RelatieType {
+    omschrijving String required
+}
+
+relationship OneToMany {
+	Contact{persoon(familienaam)} to	Persoon
+}
+
+relationship ManyToOne {
+	Persoon{contactInfo(omschrijving)} to Contact,
+    Persoon{geslacht(omschrijving)} to Geslacht,
+    Adres{adresType(omschrijving)} to AdresType,
+    Relatie{relatieType(omschrijving)} to RelatieType,
+    Contact{contactType(omschrijving)} to ContactType,
+    Persoon{adresInfo(stad)} to Adres
+    }
+
+relationship ManyToMany {
+	Persoon{relaties} to Relatie{personen}
+}
+
+
+// Set pagination options
+paginate all with infinite-scroll
+
+filter * 
+// Set service options to all except few
+service all with serviceClass 
+// Set an angular suffix
+angularSuffix * with KKF
