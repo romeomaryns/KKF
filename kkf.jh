@@ -1,6 +1,5 @@
 entity Persoon {
-	voornaam String required,
-    familienaam String required,
+	naam String required,
     geboortedatum LocalDate
   }
 
@@ -36,28 +35,28 @@ entity RelatieType {
 }
 
 relationship OneToMany {
-	Contact{persoon(familienaam)} to	Persoon
+	Contact{persoon(naam)} to	Persoon,
 }
 
 relationship ManyToOne {
-	Persoon{contactInfo(omschrijving)} to Contact,
+	Persoon{contact(omschrijving)} to Contact,
     Persoon{geslacht(omschrijving)} to Geslacht,
     Adres{adresType(omschrijving)} to AdresType,
     Relatie{relatieType(omschrijving)} to RelatieType,
     Contact{contactType(omschrijving)} to ContactType,
-    Persoon{adresInfo(stad)} to Adres
+    Persoon{adres(straatnaam)} to Adres
     }
-
 relationship ManyToMany {
-	Persoon{relaties} to Relatie{personen}
+	Persoon{relaties(omschrijving)} to Relatie{personen(naam)}
 }
-
 
 // Set pagination options
 paginate all with infinite-scroll
 
 filter * 
+
+dto * with mapstruct
 // Set service options to all except few
-service all with serviceClass 
+service all with serviceImpl 
 // Set an angular suffix
 angularSuffix * with KKF
