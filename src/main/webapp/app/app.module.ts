@@ -16,6 +16,7 @@ import { KkfAdminModule } from './admin/admin.module';
 import { KkfEntityModule } from './entities/entity.module';
 import { PaginationConfig } from './blocks/config/uib-pagination.config';
 import { StateStorageService } from './shared/auth/state-storage.service';
+import { KkfAppDashboardModule } from './dashboard/dashboard.module';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import {
     JhiMainComponent,
@@ -36,6 +37,7 @@ import {
         KkfHomeModule,
         KkfAdminModule,
         KkfEntityModule,
+        KkfAppDashboardModule,
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
     declarations: [
