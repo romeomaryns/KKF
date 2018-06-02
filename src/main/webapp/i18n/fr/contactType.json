@@ -1,0 +1,23 @@
+
+{
+    "kkfApp": {
+        "contactType" : {
+            "home": {
+                "title": "ContactTypes",
+                "createLabel": "Créer un nouveau Contact Type",
+                "createOrEditLabel": "Créer ou éditer un Contact Type",
+                "search": "Recherche pour Contact Type"
+            },
+            "created": "Un nouveau Contact Type a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Contact Type avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Contact Type avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Contact Type {{ id }} ?"
+            },
+            "detail": {
+                "title": "Contact Type"
+            },
+            "omschrijving": "Omschrijving"
+        }
+    }
+}

@@ -1,0 +1,64 @@
+
+<div *ngIf="persoon">
+    <h2><span jhiTranslate="kkfApp.persoon.detail.title">Persoon</span> {{persoon.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="kkfApp.persoon.voornaam">Voornaam</span></dt>
+        <dd>
+            <span>{{persoon.voornaam}}</span>
+        </dd>
+        <dt><span jhiTranslate="kkfApp.persoon.familienaam">Familienaam</span></dt>
+        <dd>
+            <span>{{persoon.familienaam}}</span>
+        </dd>
+        <dt><span jhiTranslate="kkfApp.persoon.geboortedatum">Geboortedatum</span></dt>
+        <dd>
+            <span>{{persoon.geboortedatum | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="kkfApp.persoon.contactInfo">Contact Info</span></dt>
+        <dd>
+            <div *ngIf="persoon.contactInfo">
+                <a [routerLink]="['/contact-kkf', persoon.contactInfo?.id]">{{persoon.contactInfo?.omschrijving}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="kkfApp.persoon.geslacht">Geslacht</span></dt>
+        <dd>
+            <div *ngIf="persoon.geslacht">
+                <a [routerLink]="['/geslacht-kkf', persoon.geslacht?.id]">{{persoon.geslacht?.omschrijving}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="kkfApp.persoon.adresInfo">Adres Info</span></dt>
+        <dd>
+            <div *ngIf="persoon.adresInfo">
+                <a [routerLink]="['/adres-kkf', persoon.adresInfo?.id]">{{persoon.adresInfo?.stad}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="kkfApp.persoon.relaties">Relaties</span></dt>
+        <dd>
+            <span *ngFor="let relaties of persoon.relaties; let last = last">
+                <a [routerLink]="['/relatie-kkf', relaties?.id ]">{{relaties.id}}</a>{{last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span jhiTranslate="kkfApp.persoon.contact">Contact</span></dt>
+        <dd>
+            <div *ngIf="persoon.contact">
+                <a [routerLink]="['/contact-kkf', persoon.contact?.id]">{{persoon.contact?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'persoon-kkf/'+ persoon.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

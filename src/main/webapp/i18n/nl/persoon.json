@@ -1,0 +1,30 @@
+
+{
+    "kkfApp": {
+        "persoon" : {
+            "home": {
+                "title": "Persoons",
+                "createLabel": "Maak een nieuwe Persoon",
+                "createOrEditLabel": "Maak of wijzig een Persoon",
+                "search": "Search for Persoon"
+            },
+            "created": "A new Persoon is created with identifier {{ param }}",
+            "updated": "A Persoon is updated with identifier {{ param }}",
+            "deleted": "A Persoon is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Bent u zeker dat u Persoon {{ id }} wilt verwijderen?"
+            },
+            "detail": {
+                "title": "Persoon"
+            },
+            "voornaam": "Voornaam",
+            "familienaam": "Familienaam",
+            "geboortedatum": "Geboortedatum",
+            "contactInfo": "Contact Info",
+            "geslacht": "Geslacht",
+            "adresInfo": "Adres Info",
+            "relaties": "Relaties",
+            "contact": "Contact"
+        }
+    }
+}

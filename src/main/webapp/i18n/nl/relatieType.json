@@ -1,0 +1,23 @@
+
+{
+    "kkfApp": {
+        "relatieType" : {
+            "home": {
+                "title": "Relatie Types",
+                "createLabel": "Maak een nieuwe Relatie Type",
+                "createOrEditLabel": "Maak of wijzig een Relatie Type",
+                "search": "Search for Relatie Type"
+            },
+            "created": "A new Relatie Type is created with identifier {{ param }}",
+            "updated": "A Relatie Type is updated with identifier {{ param }}",
+            "deleted": "A Relatie Type is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Bent u zeker dat u Relatie Type {{ id }} wilt verwijderen?"
+            },
+            "detail": {
+                "title": "Relatie Type"
+            },
+            "omschrijving": "Omschrijving"
+        }
+    }
+}

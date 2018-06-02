@@ -1,0 +1,33 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "persoon",
+            "otherEntityName": "persoon",
+            "otherEntityRelationshipName": "contact"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "contactType",
+            "otherEntityName": "contactType",
+            "otherEntityField": "omschrijving"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "omschrijving",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20180602092125",
+    "entityTableName": "contact",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": true,
+    "angularJSSuffix": "KKF"
+}

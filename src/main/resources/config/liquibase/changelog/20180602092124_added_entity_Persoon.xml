@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity Persoon.
+    -->
+    <changeSet id="20180602092124-1" author="jhipster">
+        <createTable tableName="persoon">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="voornaam" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="familienaam" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="geboortedatum" type="date">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="contact_info_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="geslacht_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="adres_info_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="contact_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        
+        <createTable tableName="persoon_relaties">
+            <column name="relaties_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="persoons_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="persoons_id, relaties_id" tableName="persoon_relaties"/>
+        
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>

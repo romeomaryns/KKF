@@ -38,6 +38,17 @@ public class CacheConfiguration {
             cm.createCache(eu.mayrns.romeo.kkf.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(eu.mayrns.romeo.kkf.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(eu.mayrns.romeo.kkf.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(eu.mayrns.romeo.kkf.domain.Persoon.class.getName(), jcacheConfiguration);
+            cm.createCache(eu.mayrns.romeo.kkf.domain.Persoon.class.getName() + ".relaties", jcacheConfiguration);
+            cm.createCache(eu.mayrns.romeo.kkf.domain.Contact.class.getName(), jcacheConfiguration);
+            cm.createCache(eu.mayrns.romeo.kkf.domain.Contact.class.getName() + ".persoons", jcacheConfiguration);
+            cm.createCache(eu.mayrns.romeo.kkf.domain.ContactType.class.getName(), jcacheConfiguration);
+            cm.createCache(eu.mayrns.romeo.kkf.domain.AdresType.class.getName(), jcacheConfiguration);
+            cm.createCache(eu.mayrns.romeo.kkf.domain.Adres.class.getName(), jcacheConfiguration);
+            cm.createCache(eu.mayrns.romeo.kkf.domain.Geslacht.class.getName(), jcacheConfiguration);
+            cm.createCache(eu.mayrns.romeo.kkf.domain.Relatie.class.getName(), jcacheConfiguration);
+            cm.createCache(eu.mayrns.romeo.kkf.domain.Relatie.class.getName() + ".personens", jcacheConfiguration);
+            cm.createCache(eu.mayrns.romeo.kkf.domain.RelatieType.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

@@ -1,0 +1,91 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myPersoonLabel" jhiTranslate="kkfApp.persoon.home.createOrEditLabel">Create or edit a Persoon</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!persoon.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="persoon.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="kkfApp.persoon.voornaam" for="field_voornaam">Voornaam</label>
+            <input type="text" class="form-control" name="voornaam" id="field_voornaam"
+                [(ngModel)]="persoon.voornaam" required/>
+            <div [hidden]="!(editForm.controls.voornaam?.dirty && editForm.controls.voornaam?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.voornaam?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="kkfApp.persoon.familienaam" for="field_familienaam">Familienaam</label>
+            <input type="text" class="form-control" name="familienaam" id="field_familienaam"
+                [(ngModel)]="persoon.familienaam" required/>
+            <div [hidden]="!(editForm.controls.familienaam?.dirty && editForm.controls.familienaam?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.familienaam?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="kkfApp.persoon.geboortedatum" for="field_geboortedatum">Geboortedatum</label>
+            <div class="input-group">
+                <input id="field_geboortedatum" type="text" class="form-control" name="geboortedatum" ngbDatepicker  #geboortedatumDp="ngbDatepicker" [(ngModel)]="persoon.geboortedatum"
+                />
+                <span class="input-group-append">
+                    <button type="button" class="btn btn-secondary" (click)="geboortedatumDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="kkfApp.persoon.contactInfo" for="field_contactInfo">Contact Info</label>
+            <select class="form-control" id="field_contactInfo" name="contactInfo" [(ngModel)]="persoon.contactInfo" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="contactOption.id === persoon.contactInfo?.id ? persoon.contactInfo : contactOption" *ngFor="let contactOption of contacts; trackBy: trackContactById">{{contactOption.omschrijving}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="kkfApp.persoon.geslacht" for="field_geslacht">Geslacht</label>
+            <select class="form-control" id="field_geslacht" name="geslacht" [(ngModel)]="persoon.geslacht" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="geslachtOption.id === persoon.geslacht?.id ? persoon.geslacht : geslachtOption" *ngFor="let geslachtOption of geslachts; trackBy: trackGeslachtById">{{geslachtOption.omschrijving}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="kkfApp.persoon.adresInfo" for="field_adresInfo">Adres Info</label>
+            <select class="form-control" id="field_adresInfo" name="adresInfo" [(ngModel)]="persoon.adresInfo" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="adresOption.id === persoon.adresInfo?.id ? persoon.adresInfo : adresOption" *ngFor="let adresOption of adres; trackBy: trackAdresById">{{adresOption.stad}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label jhiTranslate="kkfApp.persoon.relaties" for="field_relaties">Relaties</label>
+            <select class="form-control" id="field_relaties" multiple name="relaties" [(ngModel)]="persoon.relaties">
+                <option [ngValue]="getSelected(persoon.relaties, relatieOption)" *ngFor="let relatieOption of relaties; trackBy: trackRelatieById">{{relatieOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="kkfApp.persoon.contact" for="field_contact">Contact</label>
+            <select class="form-control" id="field_contact" name="contact" [(ngModel)]="persoon.contact" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="contactOption.id === persoon.contact?.id ? persoon.contact : contactOption" *ngFor="let contactOption of contacts; trackBy: trackContactById">{{contactOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -7,6 +7,14 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entités",
+                "persoonKkf": "Persoon",
+                "contactKkf": "Contact",
+                "contactTypeKkf": "Contact Type",
+                "adresTypeKkf": "Adres Type",
+                "adresKkf": "Adres",
+                "geslachtKkf": "Geslacht",
+                "relatieKkf": "Relatie",
+                "relatieTypeKkf": "Relatie Type",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

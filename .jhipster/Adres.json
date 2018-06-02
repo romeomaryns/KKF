@@ -1,0 +1,39 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "adresType",
+            "otherEntityName": "adresType",
+            "otherEntityField": "omschrijving"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "straatnaam",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "huisnummer",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "postcode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "stad",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180602092128",
+    "entityTableName": "adres",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": true,
+    "angularJSSuffix": "KKF"
+}

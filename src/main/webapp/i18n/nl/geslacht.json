@@ -1,0 +1,23 @@
+
+{
+    "kkfApp": {
+        "geslacht" : {
+            "home": {
+                "title": "Geslachts",
+                "createLabel": "Maak een nieuwe Geslacht",
+                "createOrEditLabel": "Maak of wijzig een Geslacht",
+                "search": "Search for Geslacht"
+            },
+            "created": "A new Geslacht is created with identifier {{ param }}",
+            "updated": "A Geslacht is updated with identifier {{ param }}",
+            "deleted": "A Geslacht is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Bent u zeker dat u Geslacht {{ id }} wilt verwijderen?"
+            },
+            "detail": {
+                "title": "Geslacht"
+            },
+            "omschrijving": "Omschrijving"
+        }
+    }
+}

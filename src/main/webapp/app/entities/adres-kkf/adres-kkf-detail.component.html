@@ -1,0 +1,44 @@
+
+<div *ngIf="adres">
+    <h2><span jhiTranslate="kkfApp.adres.detail.title">Adres</span> {{adres.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="kkfApp.adres.straatnaam">Straatnaam</span></dt>
+        <dd>
+            <span>{{adres.straatnaam}}</span>
+        </dd>
+        <dt><span jhiTranslate="kkfApp.adres.huisnummer">Huisnummer</span></dt>
+        <dd>
+            <span>{{adres.huisnummer}}</span>
+        </dd>
+        <dt><span jhiTranslate="kkfApp.adres.postcode">Postcode</span></dt>
+        <dd>
+            <span>{{adres.postcode}}</span>
+        </dd>
+        <dt><span jhiTranslate="kkfApp.adres.stad">Stad</span></dt>
+        <dd>
+            <span>{{adres.stad}}</span>
+        </dd>
+        <dt><span jhiTranslate="kkfApp.adres.adresType">Adres Type</span></dt>
+        <dd>
+            <div *ngIf="adres.adresType">
+                <a [routerLink]="['/adres-type-kkf', adres.adresType?.id]">{{adres.adresType?.omschrijving}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'adres-kkf/'+ adres.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

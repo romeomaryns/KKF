@@ -1,0 +1,25 @@
+
+{
+    "kkfApp": {
+        "relatie" : {
+            "home": {
+                "title": "Relaties",
+                "createLabel": "Créer un nouveau Relatie",
+                "createOrEditLabel": "Créer ou éditer un Relatie",
+                "search": "Recherche pour Relatie"
+            },
+            "created": "Un nouveau Relatie a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Relatie avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Relatie avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Relatie {{ id }} ?"
+            },
+            "detail": {
+                "title": "Relatie"
+            },
+            "omschrijving": "Omschrijving",
+            "relatieType": "Relatie Type",
+            "personen": "Personen"
+        }
+    }
+}
