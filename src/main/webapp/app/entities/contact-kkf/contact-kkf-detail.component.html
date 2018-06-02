@@ -1,0 +1,32 @@
+
+<div *ngIf="contact">
+    <h2><span jhiTranslate="kkfApp.contact.detail.title">Contact</span> {{contact.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="kkfApp.contact.omschrijving">Omschrijving</span></dt>
+        <dd>
+            <span>{{contact.omschrijving}}</span>
+        </dd>
+        <dt><span jhiTranslate="kkfApp.contact.contactType">Contact Type</span></dt>
+        <dd>
+            <div *ngIf="contact.contactType">
+                <a [routerLink]="['/contact-type-kkf', contact.contactType?.id]">{{contact.contactType?.omschrijving}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'contact-kkf/'+ contact.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

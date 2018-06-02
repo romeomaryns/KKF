@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Relatie.
+    -->
+    <changeSet id="20180602092130-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="relatie_type_id"
+                                 baseTableName="relatie"
+                                 constraintName="fk_relatie_relatie_type_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="relatie_type"/>
+
+    </changeSet>
+</databaseChangeLog>

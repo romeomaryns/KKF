@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Persoon.
+    -->
+    <changeSet id="20180602092124-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="contact_info_id"
+                                 baseTableName="persoon"
+                                 constraintName="fk_persoon_contact_info_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="contact"/>
+
+        <addForeignKeyConstraint baseColumnNames="geslacht_id"
+                                 baseTableName="persoon"
+                                 constraintName="fk_persoon_geslacht_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="geslacht"/>
+
+        <addForeignKeyConstraint baseColumnNames="adres_info_id"
+                                 baseTableName="persoon"
+                                 constraintName="fk_persoon_adres_info_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="adres"/>
+
+        <addForeignKeyConstraint baseColumnNames="persoons_id"
+                                 baseTableName="persoon_relaties"
+                                 constraintName="fk_persoon_relaties_persoons_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="persoon"/>
+        <addForeignKeyConstraint baseColumnNames="relaties_id"
+                                 baseTableName="persoon_relaties"
+                                 constraintName="fk_persoon_relaties_relaties_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="relatie"/>
+        
+        <addForeignKeyConstraint baseColumnNames="contact_id"
+                                 baseTableName="persoon"
+                                 constraintName="fk_persoon_contact_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="contact"/>
+
+    </changeSet>
+</databaseChangeLog>

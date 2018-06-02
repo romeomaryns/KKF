@@ -1,0 +1,23 @@
+
+{
+    "kkfApp": {
+        "adresType" : {
+            "home": {
+                "title": "Adres Types",
+                "createLabel": "Create a new Adres Type",
+                "createOrEditLabel": "Create or edit a Adres Type",
+                "search": "Search for Adres Type"
+            },
+            "created": "A new Adres Type is created with identifier {{ param }}",
+            "updated": "A Adres Type is updated with identifier {{ param }}",
+            "deleted": "A Adres Type is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Adres Type {{ id }}?"
+            },
+            "detail": {
+                "title": "Adres Type"
+            },
+            "omschrijving": "Omschrijving"
+        }
+    }
+}

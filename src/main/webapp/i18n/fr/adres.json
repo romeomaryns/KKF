@@ -1,0 +1,27 @@
+
+{
+    "kkfApp": {
+        "adres" : {
+            "home": {
+                "title": "Adres",
+                "createLabel": "Créer un nouveau Adres",
+                "createOrEditLabel": "Créer ou éditer un Adres",
+                "search": "Recherche pour Adres"
+            },
+            "created": "Un nouveau Adres a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Adres avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Adres avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Adres {{ id }} ?"
+            },
+            "detail": {
+                "title": "Adres"
+            },
+            "straatnaam": "Straatnaam",
+            "huisnummer": "Huisnummer",
+            "postcode": "Postcode",
+            "stad": "Stad",
+            "adresType": "Adres Type"
+        }
+    }
+}

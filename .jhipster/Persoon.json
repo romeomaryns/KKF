@@ -1,0 +1,64 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "contactInfo",
+            "otherEntityName": "contact",
+            "otherEntityField": "omschrijving"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "geslacht",
+            "otherEntityName": "geslacht",
+            "otherEntityField": "omschrijving"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "adresInfo",
+            "otherEntityName": "adres",
+            "otherEntityField": "stad"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "personen",
+            "relationshipName": "relaties",
+            "otherEntityName": "relatie",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipName": "contact",
+            "otherEntityName": "contact",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "voornaam",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "familienaam",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "geboortedatum",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "changelogDate": "20180602092124",
+    "entityTableName": "persoon",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": true,
+    "angularJSSuffix": "KKF"
+}

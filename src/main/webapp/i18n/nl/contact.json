@@ -1,0 +1,25 @@
+
+{
+    "kkfApp": {
+        "contact" : {
+            "home": {
+                "title": "Contacts",
+                "createLabel": "Maak een nieuwe Contact",
+                "createOrEditLabel": "Maak of wijzig een Contact",
+                "search": "Search for Contact"
+            },
+            "created": "A new Contact is created with identifier {{ param }}",
+            "updated": "A Contact is updated with identifier {{ param }}",
+            "deleted": "A Contact is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Bent u zeker dat u Contact {{ id }} wilt verwijderen?"
+            },
+            "detail": {
+                "title": "Contact"
+            },
+            "omschrijving": "Omschrijving",
+            "persoon": "Persoon",
+            "contactType": "Contact Type"
+        }
+    }
+}

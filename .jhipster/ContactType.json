@@ -1,0 +1,20 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "omschrijving",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20180602092126",
+    "entityTableName": "contact_type",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": true,
+    "angularJSSuffix": "KKF"
+}
